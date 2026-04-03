@@ -1,0 +1,11 @@
+build/
+Makefile
+*.mk
+*.obuild/
+Makefile
+*.mk
+*.o
+*.
+Testing/
+.DS_Store
+json.hpp
