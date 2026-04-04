@@ -9,3 +9,5 @@ Makefile
 Testing/
 .DS_Store
 json.hpp
+input*.txt
+output*.txt
