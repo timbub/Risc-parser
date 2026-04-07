@@ -193,16 +193,17 @@ namespace risc_gen {
                     }
 
                     if (current_lsb > 0) {
-                        std::string flexible_op = "";
+                        std::string field_to_expand = "";
+
                         for (const auto& op : group.operands) {
-                            if (field_rules_[op].is_flexible) {
-                                flexible_op = op;
+                            if (field_rules_[op].is_flexible && res.fields[op].lsb == current_lsb) {
+                                field_to_expand = op;
                                 break;
                             }
                         }
 
-                        if (!flexible_op.empty()) {
-                            res.fields[flexible_op].lsb = 0;
+                        if (!field_to_expand.empty()) {
+                            res.fields[field_to_expand].lsb = 0;
                         }
                     }
 
